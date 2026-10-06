@@ -1,4 +1,6 @@
 import "./styles.css";
 import getWeather from "./weather.js";
 
-// getWeather("Tokyo");
+getWeather("Tokyo").then((weather) => {
+  console.log(weather);
+});
