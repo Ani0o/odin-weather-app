@@ -6,6 +6,8 @@ const condition = document.querySelector(".condition");
 const feelslike = document.querySelector(".feelslike");
 const humidity = document.querySelector(".humidity");
 const windspeed = document.querySelector(".windspeed");
+const celsiusButton = document.querySelector(".celsius");
+const fahrenheitButton = document.querySelector(".fahrenheit");
 
 function displayWeather(weather) {
   address.textContent = weather.address;
@@ -15,8 +17,12 @@ function displayWeather(weather) {
   temp.textContent = weather.temp;
   if (weather.tempUnit === "c") {
     tempUnit.innerHTML = "&deg;C";
+    celsiusButton.classList.add("selected-unit");
+    fahrenheitButton.classList.remove("selected-unit");
   } else {
     tempUnit.innerHTML = "&deg;F";
+    fahrenheitButton.classList.add("selected-unit");
+    celsiusButton.classList.remove("selected-unit");
   }
   condition.textContent = weather.conditions;
   feelslike.innerHTML = `Feels like: ${weather.feelslike} &deg;${weather.tempUnit === "c" ? "C" : "F"}`;

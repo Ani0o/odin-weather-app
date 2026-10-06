@@ -13,13 +13,13 @@ async function getWeather(location) {
     humidity: response.currentConditions.humidity,
     windspeed: response.currentConditions.windspeed,
     changeTempToCelsius() {
-      this.temp = (this.temp - 32) / 1.8;
-      this.feelslike = (this.feelslike - 32) / 1.8;
+      this.temp = Math.round(((this.temp - 32) / 1.8) * 10) / 10;
+      this.feelslike = Math.round(((this.feelslike - 32) / 1.8) * 10) / 10;
       this.tempUnit = "c";
     },
     changeTempToFahrenheit() {
-      this.temp = this.temp * 1.8 + 32;
-      this.feelslike = this.feelslike * 1.8 + 32;
+      this.temp = Math.round((this.temp * 1.8 + 32) * 10) / 10;
+      this.feelslike = Math.round((this.feelslike * 1.8 + 32) * 10) / 10;
       this.tempUnit = "f";
     },
   };
