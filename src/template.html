@@ -5,5 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
   </head>
-  <body></body>
+  <body>
+    <div class="header">
+      <div class="title">
+        <img />
+        <h1>Weather</h1>
+      </div>
+      <div class="search">
+        <form>
+          <label for="location"
+            >Location:
+            <input type="text" id="location" placeholder="City name" required
+          /></label>
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="location-wrapper">
+        <p class="address"></p>
+        <div class="unit-changer">
+          <button class="celsius">&deg;C</button>
+          <button class="fahrenheit">&deg;F</button>
+        </div>
+      </div>
+      <div class="temp-wrapper">
+        <img />
+        <p class="temp"></p>
+        <p class="temp-unit"></p>
+      </div>
+      <p class="weather-details condition"></p>
+      <p class="weather-details feelslike"></p>
+      <p class="weather-details humidity"></p>
+      <p class="weather-details windspeed"></p>
+    </div>
+  </body>
 </html>
