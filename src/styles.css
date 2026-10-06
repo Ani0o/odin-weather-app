@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  display: grid;
+  grid-template-rows: 18vh 1fr;
+  background-color: rgb(255, 254, 249);
+  font-family: "Poppins", sans-serif;
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+button,
+input {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+/* Header section */
+
+.header {
+  background-color: rgb(31, 31, 31);
+  padding: 1vh 3vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 17vh;
+  z-index: -1;
+  height: 5px;
+  box-shadow: 0px 5px 5px black;
+}
+
+/* Title */
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+}
+
+.title img {
+  width: calc(40px + 1.5vw + 1.5vh);
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(125deg)
+    brightness(109%) contrast(110%);
+}
+
+.title h1 {
+  font-size: calc(1rem + 1.5vw + 1.5vh);
+  font-weight: bold;
+  color: white;
+}
+
+/* Search Form */
+
+form {
+  font-size: calc(0.3rem + 0.6vw + 0.6vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  color: white;
+  font-size: calc(0.4rem + 0.6vw + 0.6vh);
+  font-weight: bold;
+}
+
+input {
+  font-size: calc(0.25rem + 0.6vw + 0.6vh);
+  font-weight: 500;
+  margin: 0 0.5vw;
+  border: 2px solid gray;
+  border-radius: 5px;
+  padding: 2px 0;
+  padding-left: 10px;
+}
+
+input:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid rgb(0, 187, 187);
+  background-color: rgb(248, 248, 248);
+}
+
+form button {
+  font-size: calc(0.2rem + 0.6vw + 0.6vh);
+  font-weight: bold;
+  padding: 1.5% 2%;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(0, 154, 154);
+  color: white;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: rgb(0, 134, 134);
+}
+
+form button:active {
+  background-color: rgb(0, 154, 154);
+}
