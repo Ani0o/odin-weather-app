@@ -1,1 +1,1 @@
-# odin-webpack-template
+# odin-weather-app
