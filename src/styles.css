@@ -145,7 +145,7 @@ form button:active {
 }
 
 .main-content::after {
-  padding-left: 38vw;
+  padding-left: 41vw;
 }
 
 .main-content::before {
@@ -166,6 +166,13 @@ form button:active {
   transition: opacity 0.25s ease;
 }
 
+.error.main-content::after {
+  content: "Something went wrong";
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
 /* Location Header */
 
 .location-wrapper {
@@ -179,6 +186,8 @@ form button:active {
 .address {
   font-size: calc(1rem + 1.5vw + 1.5vh);
   font-weight: 500;
+  padding: 10vw;
+  margin-top: 2vh;
   position: relative;
 }
 

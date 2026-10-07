@@ -14,12 +14,18 @@ overlay.classList.add("first-load");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   overlay.classList.remove("first-load");
+  overlay.classList.remove("error");
   overlay.classList.add("weather-load");
   const capitalizedLocation = `${location.value.charAt(0).toUpperCase()}${location.value.slice(1)}`;
   getWeather(capitalizedLocation).then((response) => {
     weather = response;
-    displayWeather(weather);
-    overlay.classList.remove("weather-load");
+    if (Object.hasOwn(weather, "status")) {
+      displayWeather(weather);
+      overlay.classList.remove("weather-load");
+    } else {
+      overlay.classList.remove("weather-load");
+      overlay.classList.add("error");
+    }
   });
   location.value = "";
 });
