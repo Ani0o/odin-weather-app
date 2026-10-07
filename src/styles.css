@@ -27,6 +27,7 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 2;
 }
 
 .header::after {
@@ -123,22 +124,46 @@ form button:active {
   position: relative;
 }
 
-.main-content::after {
+.main-content::after,
+.main-content::before {
+  content: "";
   font-size: calc(0.5rem + 0.6vw + 0.6vh);
   font-weight: 500;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   padding-top: 32vh;
-  padding-left: 38vw;
   position: absolute;
   background-color: rgb(255, 254, 249);
   z-index: -1;
+  opacity: 0;
+  transition:
+    opacity 0.5s 0.25s ease,
+    z-index 0s 0.75s,
+    content 0s 0.75s;
+  transition-behavior: allow-discrete;
+}
+
+.main-content::after {
+  padding-left: 38vw;
+}
+
+.main-content::before {
+  padding-left: 47vw;
 }
 
 .first-load.main-content::after {
   content: "Search a location to get started";
   z-index: 1;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+.weather-load.main-content::before {
+  content: "Loading...";
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.25s ease;
 }
 
 /* Location Header */
